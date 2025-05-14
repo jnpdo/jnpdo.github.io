@@ -13,83 +13,141 @@
       }
     </style>
   </head>
-  <body class="bg-pink-100 text-gray-800">
-    <!-- Navigation -->
-    <header class="flex justify-between items-center p-6 border-b">
+
+  <body class="bg-gradient-to-br from-pink-100 via-white to-pink-200 text-gray-800 transition-all duration-300 dark:bg-gray-900 dark:text-gray-100">
+
+    <!-- Header -->
+    <header class="flex justify-between items-center p-6 border-b bg-white/80 dark:bg-gray-800/80 backdrop-blur sticky top-0 z-50">
       <h1 class="text-2xl font-semibold">Julia Do</h1>
-      <nav class="space-x-6">
-        <a href="index.html" class="hover:underline">Home</a>
-        <a href="portfolio.html" class="hover:underline font-bold">Portfolio</a>
-        <a href="#" class="hover:underline">Blog</a>
-        <a href="#" class="hover:underline">About</a>
-        <a href="#" class="hover:underline">Contact</a>
-      </nav>
+      <div class="flex items-center gap-4">
+        <nav class="space-x-6 text-sm">
+          <a href="index.html" class="hover:underline">Home</a>
+          <a href="portfolio.html" class="hover:underline font-bold">Portfolio</a>
+          <a href="#" class="hover:underline">Blog</a>
+          <a href="#" class="hover:underline">About</a>
+          <a href="#" class="hover:underline">Contact</a>
+        </nav>
+        <button id="themeToggle" class="ml-4 px-3 py-1 border rounded text-sm dark:border-white border-black">
+          Toggle Theme
+        </button>
+      </div>
     </header>
 
-    <!-- Portfolio Grid -->
-    <section class="px-6 py-12 max-w-6xl mx-auto">
-      <h2 class="text-3xl font-semibold mb-8 text-center">Paintings</h2>
-      <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
-       <!-- Julia Do - Artwork 1 -->
-<div class="relative group overflow-hidden rounded-lg shadow">
-  <img src="idontwanttosleepalone.JPG" alt="I Don't Want to Sleep Alone" class="w-full h-auto transition-transform duration-300 group-hover:scale-105" />
-  <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white p-4 text-center">
-    <h3 class="text-lg font-semibold">I Don't Want to Sleep Alone</h3>
-    <p class="text-sm">oil on board</p>
-  </div>
-</div>
-        <!-- Julia Do - Artwork 2 -->
-<div class="relative group overflow-hidden rounded-lg shadow">
-  <img src="idwtsadetail.png" alt="I Don't Want to Sleep Alone, detail" class="w-full h-auto transition-transform duration-300 group-hover:scale-105" />
-  <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white p-4 text-center">
-    <h3 class="text-lg font-semibold">I Don't Want to Sleep Alone</h3>
-    <p class="text-sm">oil on linen</p>
-  </div>
-</div>
-        
- <!-- Julia Do - Photo 1 -->
-<div class="relative group overflow-hidden rounded-lg shadow">
-  <img src="cho_phamvanhai.jpg" alt="Đường Phạm Văn Hai, Saigon, 2025" class="w-full h-auto transition-transform duration-300 group-hover:scale-105" />
-  <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white p-4 text-center">
-    <h3 class="text-lg font-semibold">Đường Phạm Văn Hai, Saigon, 2025</h3>
-    <p class="text-sm">35mm</p>
-  </div>
-</div>
-        
-  <!-- Julia Do - Photo 2 -->
-<div class="relative group overflow-hidden rounded-lg shadow">
-  <img src="photo2.jpg" alt="Aunts, Saigon, 2025" class="w-full h-auto transition-transform duration-300 group-hover:scale-105" />
-  <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white p-4 text-center">
-    <h3 class="text-lg font-semibold">Aunts, Saigon, 2025</h3>
-    <p class="text-sm">35mm</p>
-  </div>
-</div>
-
-          <!-- Julia Do - Photo 3 -->
-<div class="relative group overflow-hidden rounded-lg shadow">
-  <img src="ninhbinh.jpg" alt="Tràng An, Ninh Bình, 2025" class="w-full h-auto transition-transform duration-300 group-hover:scale-105" />
-  <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white p-4 text-center">
-    <h3 class="text-lg font-semibold">Tràng An, Ninh Bình, 2025</h3>
-    <p class="text-sm">35mm</p>
-  </div>
-</div>
-
-          <!-- Julia Do - Photo 4 -->
-<div class="relative group overflow-hidden rounded-lg shadow">
-  <img src="photo14.jpg" alt="A Teahouse in Gion, Kyoto, 2025" class="w-full h-auto transition-transform duration-300 group-hover:scale-105" />
-  <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white p-4 text-center">
-    <h3 class="text-lg font-semibold">A Teahouse in Gion, Kyoto, 2025</h3>
-    <p class="text-sm">35mm</p>
-  </div>
-</div>
-        
-        <!-- Add more image blocks as needed -->
+    <!-- Filters -->
+    <section class="px-6 pt-12 max-w-6xl mx-auto text-center">
+      <div class="mb-8 space-x-4">
+        <button class="filter-btn px-4 py-2 rounded border hover:bg-pink-200 dark:hover:bg-gray-700" data-filter="all">All</button>
+        <button class="filter-btn px-4 py-2 rounded border hover:bg-pink-200 dark:hover:bg-gray-700" data-filter="painting">Paintings</button>
+        <button class="filter-btn px-4 py-2 rounded border hover:bg-pink-200 dark:hover:bg-gray-700" data-filter="photo">Photography</button>
       </div>
     </section>
 
+    <!-- Portfolio Grid -->
+    <section class="px-6 pb-20 max-w-6xl mx-auto">
+      <div id="portfolioGrid" class="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
+        <!-- Painting 1 -->
+        <div class="portfolio-item group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300" data-category="painting">
+          <img src="idontwanttosleepalone.JPG" alt="I Don't Want to Sleep Alone" class="w-full h-auto object-cover cursor-pointer" onclick="openModal(this)" />
+          <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white p-4 text-center">
+            <h3 class="text-lg font-semibold">I Don't Want to Sleep Alone</h3>
+            <p class="text-sm">oil on board</p>
+          </div>
+        </div>
+
+        <!-- Painting 2 -->
+        <div class="portfolio-item group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300" data-category="painting">
+          <img src="idwtsadetail.png" alt="Detail" class="w-full h-auto object-cover cursor-pointer" onclick="openModal(this)" />
+          <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white p-4 text-center">
+            <h3 class="text-lg font-semibold">Detail</h3>
+            <p class="text-sm">oil on linen</p>
+          </div>
+        </div>
+
+        <!-- Photo 1 -->
+        <div class="portfolio-item group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300" data-category="photo">
+          <img src="cho_phamvanhai.jpg" alt="Phạm Văn Hai" class="w-full h-auto object-cover cursor-pointer" onclick="openModal(this)" />
+          <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white p-4 text-center">
+            <h3 class="text-lg font-semibold">Phạm Văn Hai, Saigon</h3>
+            <p class="text-sm">35mm</p>
+          </div>
+        </div>
+
+        <!-- Photo 2 -->
+        <div class="portfolio-item group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300" data-category="photo">
+          <img src="photo2.jpg" alt="Aunts" class="w-full h-auto object-cover cursor-pointer" onclick="openModal(this)" />
+          <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white p-4 text-center">
+            <h3 class="text-lg font-semibold">Aunts, Saigon</h3>
+            <p class="text-sm">35mm</p>
+          </div>
+        </div>
+
+        <!-- Photo 3 -->
+        <div class="portfolio-item group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300" data-category="photo">
+          <img src="ninhbinh.jpg" alt="Ninh Binh" class="w-full h-auto object-cover cursor-pointer" onclick="openModal(this)" />
+          <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white p-4 text-center">
+            <h3 class="text-lg font-semibold">Tràng An, Ninh Bình</h3>
+            <p class="text-sm">35mm</p>
+          </div>
+        </div>
+
+        <!-- Photo 4 -->
+        <div class="portfolio-item group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300" data-category="photo">
+          <img src="photo14.jpg" alt="Kyoto" class="w-full h-auto object-cover cursor-pointer" onclick="openModal(this)" />
+          <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white p-4 text-center">
+            <h3 class="text-lg font-semibold">Teahouse, Kyoto</h3>
+            <p class="text-sm">35mm</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal Lightbox -->
+    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-80 hidden justify-center items-center z-50">
+      <span class="absolute top-4 right-6 text-white text-3xl cursor-pointer" onclick="closeModal()">&times;</span>
+      <img id="modalImg" class="max-h-[90vh] max-w-[90vw] rounded-lg shadow-lg" />
+    </div>
+
     <!-- Footer -->
-    <footer class="text-center text-sm text-gray-500 py-10 border-t">
+    <footer class="text-center text-sm text-gray-500 py-10 border-t mt-12 dark:border-gray-700">
       &copy; 2025 Julia Do. All rights reserved.
     </footer>
+
+    <!-- JavaScript -->
+    <script>
+      // Filtering
+      const filterButtons = document.querySelectorAll(".filter-btn");
+      const portfolioItems = document.querySelectorAll(".portfolio-item");
+
+      filterButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const filter = btn.dataset.filter;
+          portfolioItems.forEach((item) => {
+            item.style.display =
+              filter === "all" || item.dataset.category === filter ? "block" : "none";
+          });
+        });
+      });
+
+      // Modal
+      function openModal(imgElement) {
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImg");
+        modalImg.src = imgElement.src;
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+      }
+
+      function closeModal() {
+        const modal = document.getElementById("imageModal");
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+      }
+
+      // Theme toggle
+      const themeToggle = document.getElementById("themeToggle");
+      themeToggle.addEventListener("click", () => {
+        document.documentElement.classList.toggle("dark");
+      });
+    </script>
   </body>
 </html>
