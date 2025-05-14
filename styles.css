@@ -1,13 +1,13 @@
 s/* styles.css */
 body {
-    cursor: url('assets/cursor.png'), auto;
+    cursor: url('assets/cursor.PNG'), auto;
 }
 /* Custom cursor for links */
 a {
-    cursor: url('assets/cursor2.png'), pointer;
+    cursor: url('assets/cursor2.PNG'), pointer;
 }
 
 /* Custom cursor for buttons */
 button {
-    cursor: url('assets/cursor2.png'), pointer;
+    cursor: url('assets/cursor2.PNG'), pointer;
 }
