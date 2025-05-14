@@ -11,23 +11,6 @@
       body {
         font-family: 'Inter', sans-serif;
       }
-  body, html {
-    cursor: none;
-  }
-  .custom-cursor {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 20px;
-    height: 20px;
-    background: rgba(255, 105, 180, 0.8); /* pink glow */
-    border-radius: 50%;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
-    transition: transform 0.1s ease-out;
-    mix-blend-mode: difference;
-  }
     </style>
   </head>
 
@@ -161,23 +144,6 @@
   
       });
       
-  <div class="custom-cursor" id="cursor"></div>
-<script>
-  const cursor = document.getElementById('cursor');
-
-  document.addEventListener('mousemove', e => {
-    cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-  });
-
-  // Optional: enlarge cursor on hover over links
-  document.querySelectorAll('a, button').forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      cursor.style.transform += ' scale(1.8)';
-    });
-    el.addEventListener('mouseleave', () => {
-      cursor.style.transform = cursor.style.transform.replace(' scale(1.8)', '');
-    });
-  });
 </script>
     
   </body>
