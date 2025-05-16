@@ -6,7 +6,6 @@
     <title>Portfolio — Julia Do</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
     <style>
       body {
@@ -32,59 +31,82 @@
     <section class="text-center py-12 px-6 max-w-3xl mx-auto">
       <h1 class="text-3xl font-semibold mb-4">Welcome to Julia’s Portfolio</h1>
       <p class="text-lg text-gray-600 dark:text-gray-300">
-        Currently exploring creative projects in Manhasset and beyond. Feel free to browse through my work and reach out with any inquiries.
+        Currently exploring creative projects in Boston, New York, California and beyond. Feel free to browse through my work and reach out with any inquiries.
       </p>
     </section>
 
     <!-- Portfolio Grid -->
-    <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-6 py-12">
+    <section class="columns-1 sm:columns-2 md:columns-3 gap-4 px-6 py-12 space-y-4">
       <!-- Portfolio Item -->
-      <div class="group relative">
-        <img src="assets/idontwanttosleepalone.JPG" alt="I Don't Want to Sleep Alone" class="w-full h-auto object-cover rounded-lg shadow-md">
+      <div class="group relative w-full break-inside-avoid">
+        <img src="assets/idontwanttosleepalone.JPG" alt="I Don't Want to Sleep Alone" class="w-full rounded-lg shadow-md cursor-pointer" onclick="openModal(this)">
         <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-lg">
           <p class="text-white text-lg">I Don't Want to Sleep Alone</p>
         </div>
       </div>
 
-      <div class="group relative">
-        <img src="assets/idwtsadetail.png" alt="Detail" class="w-full h-auto object-cover rounded-lg shadow-md">
+      <div class="group relative w-full break-inside-avoid">
+        <img src="assets/idwtsadetail.png" alt="Detail" class="w-full rounded-lg shadow-md cursor-pointer" onclick="openModal(this)">
         <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-lg">
           <p class="text-white text-lg">Detail</p>
         </div>
       </div>
 
-      <div class="group relative">
-        <img src="assets/cho_phamvanhai.jpg" alt="Phạm Văn Hai" class="w-full h-auto object-cover rounded-lg shadow-md">
+      <div class="group relative w-full break-inside-avoid">
+        <img src="assets/cho_phamvanhai.jpg" alt="Phạm Văn Hai" class="w-full rounded-lg shadow-md cursor-pointer" onclick="openModal(this)">
         <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-lg">
           <p class="text-white text-lg">Phạm Văn Hai, Saigon</p>
         </div>
       </div>
 
-      <div class="group relative">
-        <img src="assets/photo2.jpg" alt="Aunts" class="w-full h-auto object-cover rounded-lg shadow-md">
+      <div class="group relative w-full break-inside-avoid">
+        <img src="assets/photo2.jpg" alt="Aunts" class="w-full rounded-lg shadow-md cursor-pointer" onclick="openModal(this)">
         <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-lg">
           <p class="text-white text-lg">Aunts, Saigon</p>
         </div>
       </div>
 
-      <div class="group relative">
-        <img src="assets/ninhbinh.jpg" alt="Ninh Binh" class="w-full h-auto object-cover rounded-lg shadow-md">
+      <div class="group relative w-full break-inside-avoid">
+        <img src="assets/ninhbinh.jpg" alt="Ninh Binh" class="w-full rounded-lg shadow-md cursor-pointer" onclick="openModal(this)">
         <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-lg">
           <p class="text-white text-lg">Tràng An, Ninh Bình</p>
         </div>
       </div>
 
-      <div class="group relative">
-        <img src="assets/photo14.jpg" alt="Kyoto" class="w-full h-auto object-cover rounded-lg shadow-md">
+      <div class="group relative w-full break-inside-avoid">
+        <img src="assets/photo14.jpg" alt="Kyoto" class="w-full rounded-lg shadow-md cursor-pointer" onclick="openModal(this)">
         <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-lg">
           <p class="text-white text-lg">Teahouse, Kyoto</p>
         </div>
       </div>
     </section>
 
+    <!-- Lightbox Modal -->
+    <div id="modal" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50">
+      <span class="absolute top-6 right-8 text-white text-4xl cursor-pointer" onclick="closeModal()">&times;</span>
+      <img id="modalImage" class="max-w-full max-h-[90vh] rounded-lg shadow-lg" />
+    </div>
+
     <!-- Footer -->
     <footer class="text-center text-sm text-gray-500 py-10 border-t mt-12 dark:border-gray-700">
       &copy; 2025 Julia Do. All rights reserved.
     </footer>
+
+    <!-- Scripts -->
+    <script>
+      function openModal(img) {
+        const modal = document.getElementById("modal");
+        const modalImg = document.getElementById("modalImage");
+        modalImg.src = img.src;
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+      }
+
+      function closeModal() {
+        const modal = document.getElementById("modal");
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+      }
+    </script>
   </body>
 </html>
